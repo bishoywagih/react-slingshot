@@ -12,7 +12,6 @@ jobs:
       - checkout
       - restore_cache:
           key: v1-deps-{{ checksum "package-lock.json" }}
-      - run: npm uninstall node-sass
       - run:
           name: "Install node modules"
           command: npm i
@@ -31,7 +30,6 @@ jobs:
       - checkout
       - restore_cache:
           key: v1-deps-{{ checksum "package-lock.json" }}
-      - run: npm uninstall node-sass
       - run: npm install
       - run:
           name: "Test Project"
